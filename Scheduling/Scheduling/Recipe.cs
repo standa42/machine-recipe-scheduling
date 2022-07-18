@@ -6,7 +6,7 @@ namespace Scheduling
     /// <summary>
     /// Recipe to be processed on a machine
     /// </summary>
-    internal class Recipe
+    public class Recipe
     {
         public string Name { get; set; }
 

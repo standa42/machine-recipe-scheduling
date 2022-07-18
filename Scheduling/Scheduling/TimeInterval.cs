@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Scheduling
 {
-    internal class DateTimeInterval
+    public class DateTimeInterval
     {
         public DateTime Start { get; }
 

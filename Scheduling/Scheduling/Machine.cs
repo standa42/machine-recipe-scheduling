@@ -7,7 +7,7 @@ namespace Scheduling
     /// <summary>
     /// Machine that processes scheduled recipes
     /// </summary>
-    internal class Machine
+    public class Machine
     {
         public string Name { get; set; }
 

@@ -5,7 +5,7 @@ namespace Scheduling
     /// <summary>
     /// Recipe bound to specific datetime interval
     /// </summary>
-    internal class ScheduledRecipe
+    public class ScheduledRecipe
     {
         public Recipe Recipe { get; set; }
 

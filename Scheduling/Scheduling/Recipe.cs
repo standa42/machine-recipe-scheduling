@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Serilog;
 
 namespace Scheduling
 {
+    /// <summary>
+    /// Recipe to be processed on a machine
+    /// </summary>
     internal class Recipe
     {
         public string Name { get; set; }
@@ -16,6 +16,8 @@ namespace Scheduling
         {
             Name = name;
             Duration = duration;
+
+            Log.Debug($"Recipe {Name} with duration {duration} created");
         }
     }
 }

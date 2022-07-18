@@ -1,35 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Scheduling
 {
-    internal class TimeInterval
+    internal class DateTimeInterval
     {
-        public DateTime Start { get; set; }
+        public DateTime Start { get; }
 
-        public DateTime End { get; set; }
+        public DateTime End { get; }
 
         public TimeSpan GetDuration()
         {
             return End - Start;
         }
 
-        public TimeInterval(DateTime start, DateTime end)
+        public DateTimeInterval(DateTime start, DateTime end)
         {
             Start = start;
             End = end;
         }
 
-        public TimeInterval(DateTime start, TimeSpan duration)
+        public DateTimeInterval(DateTime start, TimeSpan duration)
         {
             Start = start;
             End = start + duration;
         }
 
-        public static bool Intersection(TimeInterval timeInterval1, TimeInterval timeInterval2)
+        /// <summary>
+        /// Checks intersection between datetime intervals. Intervals are considered to be open, so if one ends in the same moment the other one start, it is not considered as intersection.
+        /// </summary>
+        /// <returns>True if intervals have intersection, false otherwise</returns>
+        public static bool Intersection(DateTimeInterval timeInterval1, DateTimeInterval timeInterval2)
         {
             // TODO: change to better comparison of datetimes
             // This is pretty basic quick solution based on https://stackoverflow.com/questions/1985317/equivalent-of-math-min-math-max-for-dates

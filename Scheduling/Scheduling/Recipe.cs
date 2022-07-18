@@ -8,9 +8,9 @@ namespace Scheduling
     /// </summary>
     public class Recipe
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public TimeSpan Duration { get; set; }
+        public TimeSpan Duration { get; }
 
         public Recipe(string name, TimeSpan duration)
         {

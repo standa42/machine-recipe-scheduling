@@ -66,7 +66,7 @@ namespace SchedulingTests
         }
 
         [TestMethod]
-        public void TwoRecipesScheduleWithTimeInbetweenTest()
+        public void TwoRecipesScheduleWithTimeInBetweenTest()
         {
             var machine = new Machine("TestMachine");
             var recipe1 = new Recipe("TestRecipe1", Durations.Duration30m);
@@ -75,6 +75,21 @@ namespace SchedulingTests
             var scheduledRecipe2 = machine.Schedule(recipe2, Times.DayZero12h);
             Assert.AreSame(recipe1, scheduledRecipe1.Recipe);
             Assert.AreSame(recipe2, scheduledRecipe2.Recipe);
+        }
+
+        [TestMethod]
+        public void ThreeRecipesScheduleBothConsecutiveAndTimeInBetweenTest()
+        {
+            var machine = new Machine("TestMachine");
+            var recipe1 = new Recipe("TestRecipe1", Durations.Duration30m);
+            var recipe2 = new Recipe("TestRecipe2", Durations.Duration30m);
+            var recipe3 = new Recipe("TestRecipe2", Durations.Duration30m);
+            var scheduledRecipe1 = machine.Schedule(recipe1, Times.DayZero0h);
+            var scheduledRecipe2 = machine.Schedule(recipe2, Times.DayZero12h30m);
+            var scheduledRecipe3 = machine.Schedule(recipe3, Times.DayZero12h);
+            Assert.AreSame(recipe1, scheduledRecipe1.Recipe);
+            Assert.AreSame(recipe2, scheduledRecipe2.Recipe);
+            Assert.AreSame(recipe3, scheduledRecipe3.Recipe);
         }
 
         [TestMethod]

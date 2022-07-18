@@ -7,12 +7,12 @@ namespace Scheduling
     /// </summary>
     public class ScheduledRecipe
     {
-        public Recipe Recipe { get; set; }
+        public Recipe Recipe { get; }
 
         /// <summary>
         /// Time interval to which is the recipe scheduled
         /// </summary>
-        public DateTimeInterval TimeInterval { get; set; }
+        public DateTimeInterval TimeInterval { get; }
 
         public ScheduledRecipe(Recipe recipe, DateTimeInterval timeInterval)
         {

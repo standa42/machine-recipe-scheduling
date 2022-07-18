@@ -9,9 +9,9 @@ namespace Scheduling
     /// </summary>
     public class Machine
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
-        private List<ScheduledRecipe> Recipes { get; set; }
+        private readonly IList<ScheduledRecipe> Recipes;
 
         public Machine(string name)
         {
@@ -59,7 +59,7 @@ namespace Scheduling
         /// <summary>
         /// Retuns all recipes scheduled on the machine
         /// </summary>
-        public List<ScheduledRecipe> GetAllScheduledRecipes()
+        public IList<ScheduledRecipe> GetAllScheduledRecipes()
         {
             return Recipes;
         }
